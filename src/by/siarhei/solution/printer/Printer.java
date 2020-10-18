@@ -14,6 +14,10 @@ public  class Printer<C extends Tag> {
     }
 
     public void print() {
-        System.out.println(this.context.toString());
+        if(this.context != null) {
+            System.out.println(this.context.toString());
+        } else {
+            System.err.println("Cannot print with reason: 'context wasn't set'.");
+        }
     }
 }
